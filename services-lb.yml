@@ -4,9 +4,13 @@ metadata:
   name: nginx
 spec:
   type: LoadBalancer
+  sessionAffinity: ClientIP
   selector:
     app: nginx
   ports:
   - protocol: TCP
     port: 60000
     targetPort: 80
+    
+    
+    ## load balancer with session affinity active
